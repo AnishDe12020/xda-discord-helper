@@ -14,13 +14,13 @@ class Slashmain(commands.Cog):
     
     @cog_ext.cog_slash(name="ping", 
              description="Just a test command",
-             guild_ids=[868353576160854116])
+             guild_ids=[868353576160854116, 422814981520621569])
     async def _ping(self, ctx: SlashContext): 
         await ctx.send(f"Pong!")
         
     @cog_ext.cog_slash(name="about", 
              description="Some statistics about the bot",
-             guild_ids=[868353576160854116])
+             guild_ids=[868353576160854116, 422814981520621569])
     async def _about(self, ctx: SlashContext): 
         uptime_s = int(round(time() - startTime))
         if uptime_s > 86400:
@@ -40,7 +40,7 @@ class Slashmain(commands.Cog):
             uptime += " seconds"
 
         embed = discord.Embed(title = "XDA Helper statistics", color = 0x301c24)
-        embed.add_field(name = "Revision", value = "v0.1-bleedingedge")
+        embed.add_field(name = "Revision", value = "v1.0-stable")
         embed.add_field(name = "Uptime", value = uptime)
         await ctx.send(embed = embed)
      

@@ -12,7 +12,7 @@ class SlashForum(commands.Cog):
  
     @cog_ext.cog_slash(name="google", 
              description="Searches Google for you",
-             guild_ids=[868353576160854116])
+             guild_ids=[868353576160854116, 422814981520621569])
     async def _google(self, ctx: SlashContext, search_string):
         await ctx.defer()
 
@@ -26,7 +26,7 @@ class SlashForum(commands.Cog):
 
     @cog_ext.cog_slash(name="forum", 
              description="Searches XDA Forums for you",
-             guild_ids=[868353576160854116])
+             guild_ids=[868353576160854116, 422814981520621569])
     async def _forum(self, ctx, search_string):
         serch_a = search_string; await ctx.defer()
         serch_a += " site:forum.xda-developers.com"
