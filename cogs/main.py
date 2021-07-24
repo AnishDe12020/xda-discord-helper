@@ -53,7 +53,7 @@ class Main(commands.Cog):
             uptime += " seconds"
 
         embed = discord.Embed(title = "XDA Helper statistics", color = 0x301c24)
-        embed.add_field(name = "Revision", value = "v0.1-bleedingedge")
+        embed.add_field(name = "Revision", value = "v1.0-stable")
         embed.add_field(name = "Uptime", value = uptime)
         await ctx.send(embed = embed)
         
