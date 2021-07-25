@@ -18,10 +18,6 @@ class Main(commands.Cog):
                                                            /_/            """)
         print(f"\nStarted at {datetime.now().strftime('%I:%m %p')}\nBot Creator: NullCode#1337\n\nErrors:")
     
-    @commands.command()
-    async def ping(self, ctx):
-        await ctx.send(f"Pong!")
-    
     @commands.command(aliases=['help', 'helpmenu'])
     async def menu(self, ctx):
         embed = discord.Embed(title = "__Commands List:__", color = 0x301c24)

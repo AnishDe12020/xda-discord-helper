@@ -11,12 +11,6 @@ slash = SlashCommand(bot, sync_commands=True); startTime = time()
 class Slashmain(commands.Cog):
     def __init__(self, client):
         self.client = client
-    
-    @cog_ext.cog_slash(name="ping", 
-             description="Just a test command",
-             guild_ids=[868353576160854116, 422814981520621569])
-    async def _ping(self, ctx: SlashContext): 
-        await ctx.send(f"Pong!")
         
     @cog_ext.cog_slash(name="about", 
              description="Some statistics about the bot",
