@@ -1,6 +1,6 @@
 import discord 
 from discord.ext import commands
-from googlesearch import search as sr
+import googlesearch
 
 num = [1, 2, 3, 4, 5]
 
@@ -14,7 +14,7 @@ class Forum(commands.Cog):
         param += " site:forum.xda-developers.com"
     
         embed = discord.Embed(title = "__Here are the results for your search:__", color = 0x301c24)
-        search_url = list(sr(param, num_results=10))
+        search_url = list(googlesearch.search(param, num_results=10))
 
         del search_url[5:]
     
@@ -28,7 +28,7 @@ class Forum(commands.Cog):
         param = " ".join(srch)
     
         embed = discord.Embed(title = "__Here are the results for your search:__", color = 0x301c24)
-        search_url = list(sr(param, num_results=10))
+        search_url = list(googlesearch.search(param, num_results=10))
 
         del search_url[5:]
     

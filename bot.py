@@ -4,8 +4,8 @@ from discord_slash import SlashCommand
 from googlesearch import search as sr
 
 
-activity = discord.Streaming(name="dxda/help", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ/")
-client = commands.Bot(command_prefix = "dxda/", activity = activity, intents=discord.Intents.all())
+activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ/")
+client = commands.Bot(command_prefix = "xda/", activity = activity, intents=discord.Intents.all())
 client.remove_command("help"); slash = SlashCommand(client, sync_commands=True); num = [1, 2, 3, 4, 5]
 
 
