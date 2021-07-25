@@ -45,14 +45,14 @@ async def reload(ctx, extension):
 @load.error
 async def load_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
-        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color == 0x000000))
+        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color = 0x000000))
     else:
         raise error
         
 @unload.error
 async def unload_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
-        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color == 0x000000))
+        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color = 0x000000))
     else:
         raise error
         
@@ -60,7 +60,7 @@ async def unload_error(ctx, error):
 @reload.error
 async def reload_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
-        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color == 0x000000))
+        await ctx.send(embed = discord.Embed(title = "You do not have the __Helper__ role", color = 0x000000))
     else:
         raise error
 ##########################################################################################       
@@ -71,4 +71,4 @@ for file in os.listdir('./cogs'):
         client.load_extension(f"cogs.{file[:-3]}")
     
     
-client.run("ODM4NjI1MTY0OTQ1Nzg0ODQy.YI90jA.oeAjE3aQ_6emV4cMmtferI4Wk2Y")
+client.run("ODQ3MTAxMjI0NjU0MDc3OTky.YK5Kfg.Se8FELBKKcsFnYdUnrXGJ_Yos14")
