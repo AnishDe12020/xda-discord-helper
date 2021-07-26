@@ -16,7 +16,7 @@ class Main(commands.Cog):
  _>  </ // / __ |  / // / (_-</ __/ _ \/ __/ _  / / _  / -_) / _ \/ -_) __/
 /_/|_/____/_/ |_| /____/_/___/\__/\___/_/  \_,_/ /_//_/\__/_/ .__/\__/_/   
                                                            /_/            """)
-        print(f"\nStarted at {datetime.now().strftime('%I:%m %p')}\nBot Creator: NullCode#1337\n\nErrors:")
+        print(f"\nStarted at {datetime.now().strftime('%I:%m %p')}\nBot Creator(s): NullCode#1337; Nabsi#4017; justAHuman#1202\n\nErrors:")
     
     @commands.command(aliases=['help', 'helpmenu'])
     async def menu(self, ctx):
