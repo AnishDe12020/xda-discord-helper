@@ -5,3 +5,4 @@ discord
 discord.py
 requests
 python-dotenv
+asyncio
