@@ -16,8 +16,17 @@ class Main(commands.Cog):
  _>  </ // / __ |  / // / (_-</ __/ _ \/ __/ _  / / _  / -_) / _ \/ -_) __/
 /_/|_/____/_/ |_| /____/_/___/\__/\___/_/  \_,_/ /_//_/\__/_/ .__/\__/_/   
                                                            /_/            """)
-        print(f"\nStarted at {datetime.now().strftime('%I:%m %p')}\nBot Creator(s): NullCode#1337; Nabsi#4017; justAHuman#1202\n\nErrors:")
+        print(f"\nStarted at {datetime.now().strftime('%I:%m %p')}\nBot Creator(s): NullCode#1337; Nabsi#4017; justAHuman#1202\n\n")
     
+        guild_ids_of_guilds_bot_is_in = []
+
+        for guild in self.client.guilds:
+            guild_ids_of_guilds_bot_is_in.append(guild.id)
+
+        print("Ids of servers the bot is in:\n", guild_ids_of_guilds_bot_is_in)
+        print("Errors:")
+
+
     @commands.command(aliases=['help', 'helpmenu'])
     async def menu(self, ctx):
         embed = discord.Embed(title = "__Commands List:__", color = 0x301c24)

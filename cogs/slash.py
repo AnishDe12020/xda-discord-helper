@@ -4,9 +4,18 @@ from discord_slash import SlashCommand
 from discord_slash import SlashContext
 from discord_slash import cog_ext
 from time import time
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all())
 slash = SlashCommand(bot, sync_commands=True); startTime = time()
+
+guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = guild_ids.split(" ")
+
+guild_ids = [int(guild_id) for guild_id in guild_ids]
+
 
 class Slashmain(commands.Cog):
     def __init__(self, client):
@@ -14,7 +23,7 @@ class Slashmain(commands.Cog):
         
     @cog_ext.cog_slash(name="about", 
              description="Some statistics about the bot",
-             guild_ids=[868353576160854116, 422814981520621569])
+             guild_ids=guild_ids)
     async def _about(self, ctx: SlashContext): 
         uptime_s = int(round(time() - startTime))
         if uptime_s > 86400:

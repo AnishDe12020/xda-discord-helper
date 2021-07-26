@@ -2,9 +2,16 @@ import discord
 from discord.ext import commands
 from discord_slash import SlashCommand; from discord_slash import SlashContext; from discord_slash import cog_ext
 import googlesearch
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 num = [1, 2, 3, 4, 5]
 bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all()); slash = SlashCommand(bot, sync_commands=True)
+guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = guild_ids.split(" ")
+
+guild_ids = [int(guild_id) for guild_id in guild_ids]
 
 class SlashForum(commands.Cog):
     def __init__(self, client):
@@ -12,7 +19,7 @@ class SlashForum(commands.Cog):
  
     @cog_ext.cog_slash(name="google", 
              description="Searches Google for you",
-             guild_ids=[868353576160854116, 422814981520621569])
+             guild_ids=guild_ids)
     async def _google(self, ctx: SlashContext, search_string):
         await ctx.defer()
 
@@ -26,7 +33,7 @@ class SlashForum(commands.Cog):
 
     @cog_ext.cog_slash(name="forum", 
              description="Searches XDA Forums for you",
-             guild_ids=[868353576160854116, 422814981520621569])
+             guild_ids=guild_ids)
     async def _forum(self, ctx, search_string):
         serch_a = search_string; await ctx.defer()
         serch_a += " site:forum.xda-developers.com"

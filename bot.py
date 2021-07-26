@@ -10,11 +10,16 @@ activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch
 client = commands.Bot(command_prefix = "xda/", activity = activity, intents=discord.Intents.all())
 client.remove_command("help"); slash = SlashCommand(client, sync_commands=True); num = [1, 2, 3, 4, 5]
 
+guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = guild_ids.split(" ")
+
+guild_ids = [int(guild_id) for guild_id in guild_ids]
+
 
 ###########################################################
 """Ping commands"""
 @slash.slash(name="ping", description="Just a test command",
-         guild_ids=[868353576160854116, 422814981520621569])
+         guild_ids=guild_ids)
 async def _ping(ctx): 
     await ctx.send(f"Pong! {round(client.latency*1000)}ms")
         
