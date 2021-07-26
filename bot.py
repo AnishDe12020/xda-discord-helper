@@ -76,4 +76,4 @@ for file in os.listdir('./cogs'):
         client.load_extension(f"cogs.{file[:-3]}")
     
     
-client.run(os.environ['BOT_TOKEN'])
+client.run(os.environ("BOT_TOKEN"))

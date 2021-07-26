@@ -26,9 +26,10 @@ class Misc(commands.Cog):
     @commands.command()
     async def remind(self, ctx, time, *msg):
         """Reminds you of something after a certain amount of time"""
-        await ctx.send("I'll remind you of that in {} seconds".format(time))
+        uid = ctx.author.id
+        await ctx.send("Reminding you in {} seconds".format(time))
         await asyncio.sleep(int(time))
-        await ctx.send(" ".join(msg))
+        await ctx.send(f'<@{uid}> Reminder: {" ".join(msg)}')
         
         
 def setup(client):

@@ -1,16 +1,16 @@
-import discord 
+import discord, os, googlesearch
 from discord.ext import commands
-from discord_slash import SlashCommand; from discord_slash import SlashContext; from discord_slash import cog_ext
-import googlesearch
+from discord_slash import SlashCommand, SlashContext, cog_ext
 from dotenv import load_dotenv
-import os
+
 load_dotenv()
 
 num = [1, 2, 3, 4, 5]
-bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all()); slash = SlashCommand(bot, sync_commands=True)
+bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all())
+slash = SlashCommand(bot, sync_commands=True)
+
 guild_ids = os.environ["SLASH_GUILD_IDS"]
 guild_ids = guild_ids.split(" ")
-
 guild_ids = [int(guild_id) for guild_id in guild_ids]
 
 class SlashForum(commands.Cog):

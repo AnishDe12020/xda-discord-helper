@@ -34,10 +34,10 @@ class Main(commands.Cog):
         embed.add_field(name = "xda/google {question}", value = "Searches Google for you", inline = False)
         embed.add_field(name = "xda/forum {question}", value = "Searches XDA Forums for your string", inline = False)
         embed.add_field(name = "xda/magisk {links} [Optional]", value = "Sends everything [and links] Magisk related", inline = False)
-        embed.add_field(name = "xda/about", value = "About the bot and it's creator :D", inline = False)
-        embed.add_field(name = "xda/ping", value = "Pong!", inline = False)
         embed.add_field(name = "xda/remind {seconds} {msg}", value = "Reminds you after x seconds with a message", inline = False)
-        embed.add_field(name = "xda/help", value = "Shows this message", inline = False)
+        embed.add_field(name = "xda/about {no arguments}", value = "About the bot and it's creator :D", inline = False)
+        embed.add_field(name = "xda/ping {no arguments}", value = "Sends client latency", inline = False)
+        embed.add_field(name = "xda/help {no arguments}", value = "Shows this message", inline = False)
         await ctx.send(embed = embed)
     
     @commands.command()

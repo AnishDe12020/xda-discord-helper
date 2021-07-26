@@ -1,6 +1,5 @@
-import discord 
+import discord, googlesearch
 from discord.ext import commands
-import googlesearch
 
 num = [1, 2, 3, 4, 5]
 
