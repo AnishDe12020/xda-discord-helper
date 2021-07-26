@@ -2,7 +2,9 @@ import discord, os
 from discord.ext import commands
 from discord_slash import SlashCommand
 from googlesearch import search as sr
+from dotenv import load_dotenv
 
+load_dotenv()
 
 activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ/")
 client = commands.Bot(command_prefix = "xda/", activity = activity, intents=discord.Intents.all())
