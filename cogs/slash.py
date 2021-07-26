@@ -50,6 +50,7 @@ class Slashmain(commands.Cog):
         e2.add_field(name = "What do they do?", value = "As of now, we are students who are extremely bored")
         e2.set_footer(text = "If you want to contribute, feel free to PR in the git repo")
         embed.set_image(url="https://cdn.discordapp.com/attachments/868353576160854120/869268253745250324/unknown.png")
-     
+        await ctx.send(e2)
+        
 def setup(client):
     client.add_cog(Slashmain(client))
