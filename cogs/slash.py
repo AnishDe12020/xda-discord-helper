@@ -39,9 +39,17 @@ class Slashmain(commands.Cog):
             uptime += " seconds"
 
         embed = discord.Embed(title = "XDA Helper statistics", color = 0x301c24)
-        embed.add_field(name = "Revision", value = "v1.0-stable")
-        embed.add_field(name = "Uptime", value = uptime)
+        embed.add_field(name = "Revision", value = "v1.0-stable", inline = False)
+        embed.add_field(name = "Uptime", value = uptime, inline = False)
+        embed.add_field(name = "Source Code", value = "[On Github](https://github.com/NullCode13/xda-discord-helper/)", inline = False)
+        embed.add_field(name = "Heroku Build Status", value = "Passing", inline = False)
         await ctx.send(embed = embed)
+        
+        e2 = discord.Embed(title = "About the bot's creators")
+        e2.add_field(name = "Who are they?", value = "NullCode, justAhuman, Nabsi and Otus9051")
+        e2.add_field(name = "What do they do?", value = "As of now, we are students who are extremely bored")
+        e2.set_footer(text = "If you want to contribute, feel free to PR in the git repo")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/868353576160854120/869268253745250324/unknown.png")
      
 def setup(client):
     client.add_cog(Slashmain(client))
