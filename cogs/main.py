@@ -30,7 +30,7 @@ class Main(commands.Cog):
     @commands.command(aliases=['help', 'helpmenu'])
     async def menu(self, ctx):
         embed = discord.Embed(title = "__Commands List:__", color = 0x301c24)
-        embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/422822063049539584/868149682088603678/XDA.png")
+        embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/868353576160854120/869269123861999707/XDA.png")
         embed.add_field(name = "xda/google {question}", value = "Searches Google for you", inline = False)
         embed.add_field(name = "xda/forum {question}", value = "Searches XDA Forums for your string", inline = False)
         embed.add_field(name = "xda/magisk {links} [Optional]", value = "Sends everything [and links] Magisk related", inline = False)
@@ -62,11 +62,17 @@ class Main(commands.Cog):
             uptime += " seconds"
 
         embed = discord.Embed(title = "XDA Helper statistics", color = 0x301c24)
-        embed.add_field(name = "Revision", value = "v1.0-stable")
-        embed.add_field(name = "Uptime", value = uptime)
-        embed.add_field(name = "Source Code", value = "https://github.com/NullCode13/xda-discord-helper/")
-        embed.set_image(url="https://contrib.rocks/image?repo=nullcode13/xda-discord-helper")
+        embed.add_field(name = "Revision", value = "v1.0-stable", inline = False)
+        embed.add_field(name = "Uptime", value = uptime, inline = False)
+        embed.add_field(name = "Source Code", value = "[On Github](https://github.com/NullCode13/xda-discord-helper/)", inline = False)
+        embed.add_field(name = "Heroku Build Status", value = "Passing", inline = False)
         await ctx.send(embed = embed)
+        
+        e2 = discord.Embed(title = "About the bot's creators")
+        e2.add_field(name = "Who are they?", value = "NullCode, justAhuman, Nabsi and Otus9051")
+        e2.add_field(name = "What do they do?", value = "As of now, we are students who are extremely bored")
+        e2.set_footer(text = "If you want to contribute, feel free to PR in the git repo")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/868353576160854120/869268253745250324/unknown.png")
         
 def setup(client):
     client.add_cog(Main(client))
