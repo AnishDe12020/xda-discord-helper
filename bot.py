@@ -1,7 +1,6 @@
 import discord, os
 from discord.ext import commands
 from discord_slash import SlashCommand
-from googlesearch import search as sr
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,9 +9,8 @@ activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch
 client = commands.Bot(command_prefix = "xda/", activity = activity, intents=discord.Intents.all())
 client.remove_command("help"); slash = SlashCommand(client, sync_commands=True); num = [1, 2, 3, 4, 5]
 
-guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = os.environ["SLASH_GUILD_IDS"]
 guild_ids = guild_ids.split(" ")
-
 guild_ids = [int(guild_id) for guild_id in guild_ids]
 
 
