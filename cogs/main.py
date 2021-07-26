@@ -64,6 +64,8 @@ class Main(commands.Cog):
         embed = discord.Embed(title = "XDA Helper statistics", color = 0x301c24)
         embed.add_field(name = "Revision", value = "v1.0-stable")
         embed.add_field(name = "Uptime", value = uptime)
+        embed.add_field(name = "Source Code", value = "https://github.com/NullCode13/xda-discord-helper/")
+        embed.set_image(url="https://contrib.rocks/image?repo=nullcode13/xda-discord-helper")
         await ctx.send(embed = embed)
         
 def setup(client):
