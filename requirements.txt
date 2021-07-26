@@ -4,3 +4,4 @@ googlesearch-python==1.0.1
 discord
 discord.py
 requests
+python-dotenv
