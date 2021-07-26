@@ -8,7 +8,7 @@ load_dotenv()
 
 num = [1, 2, 3, 4, 5]
 bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all()); slash = SlashCommand(bot, sync_commands=True)
-guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = os.environ["SLASH_GUILD_IDS"]
 guild_ids = guild_ids.split(" ")
 
 guild_ids = [int(guild_id) for guild_id in guild_ids]

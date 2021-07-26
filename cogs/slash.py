@@ -1,19 +1,15 @@
-import discord 
+import discord, os
 from discord.ext import commands
-from discord_slash import SlashCommand
-from discord_slash import SlashContext
-from discord_slash import cog_ext
-from time import time
-import os
-from dotenv import load_dotenv
+from discord_slash import SlashCommand, SlashContext, cog_ext
+from time import time; from dotenv import load_dotenv
+
 load_dotenv()
 
 bot = commands.Bot(command_prefix="xda/", intents=discord.Intents.all())
 slash = SlashCommand(bot, sync_commands=True); startTime = time()
 
-guild_ids = os.environ["SLASH_COMMAND_GUILD_IDS"]
+guild_ids = os.environ["SLASH_GUILD_IDS"]
 guild_ids = guild_ids.split(" ")
-
 guild_ids = [int(guild_id) for guild_id in guild_ids]
 
 

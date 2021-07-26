@@ -22,6 +22,14 @@ class Misc(commands.Cog):
             embed.add_field(name = "Official Installation Guide", value = "https://topjohnwu.github.io/Magisk/install.html", inline = False)
             embed.add_field(name = "Magisk Documentation (Users and Devs)", value = "https://topjohnwu.github.io/Magisk/", inline = False)
             await ctx.send(embed = embed)
+    
+    @commands.command()
+    async def remind(self, ctx, time, *msg):
+        """Reminds you of something after a certain amount of time"""
+        await ctx.send("I'll remind you of that in {} seconds".format(time))
+        await asyncio.sleep(int(time))
+        await ctx.send(" ".join(msg))
+        
         
 def setup(client):
     client.add_cog(Misc(client))

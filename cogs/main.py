@@ -23,7 +23,7 @@ class Main(commands.Cog):
         for guild in self.client.guilds:
             guild_ids_of_guilds_bot_is_in.append(guild.id)
 
-        print("Ids of servers the bot is in:\n", guild_ids_of_guilds_bot_is_in)
+        print("IDs of servers the bot is in:\n", guild_ids_of_guilds_bot_is_in)
         print("Errors:")
 
 
@@ -33,10 +33,10 @@ class Main(commands.Cog):
         embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/422822063049539584/868149682088603678/XDA.png")
         embed.add_field(name = "xda/google {question}", value = "Searches Google for you", inline = False)
         embed.add_field(name = "xda/forum {question}", value = "Searches XDA Forums for your string", inline = False)
-        embed.add_field(name = "xda/magisk", value = "Sends everything Magisk related", inline = False)
+        embed.add_field(name = "xda/magisk {links} [Optional]", value = "Sends everything [and links] Magisk related", inline = False)
         embed.add_field(name = "xda/about", value = "About the bot and it's creator :D", inline = False)
         embed.add_field(name = "xda/ping", value = "Pong!", inline = False)
-        embed.add_field(name = "xda/remind", value = "Reminds you after x seconds with a message\nUsage: `xda/remind <time_in_seconds> <message>`", inline = False)
+        embed.add_field(name = "xda/remind {seconds} {msg}", value = "Reminds you after x seconds with a message", inline = False)
         embed.add_field(name = "xda/help", value = "Shows this message", inline = False)
         await ctx.send(embed = embed)
     
