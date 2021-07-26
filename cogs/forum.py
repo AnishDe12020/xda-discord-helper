@@ -8,6 +8,7 @@ class Forum(commands.Cog):
         self.client = client
     
     @commands.command(aliases=["forums", "search"])
+    @commands.cooldown(1, 45, commands.BucketType.user)
     async def forum(self, ctx, *srch):  
         param = " ".join(srch)
         param += " site:forum.xda-developers.com"
@@ -23,6 +24,7 @@ class Forum(commands.Cog):
         await ctx.send(embed = embed)
         
     @commands.command()
+    @commands.cooldown(1, 45, commands.BucketType.user)
     async def google(self, ctx, *srch):  
         param = " ".join(srch)
     

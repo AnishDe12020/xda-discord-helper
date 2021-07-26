@@ -41,6 +41,7 @@ class Main(commands.Cog):
         await ctx.send(embed = embed)
     
     @commands.command()
+    @commands.cooldown(1, 20, commands.BucketType.user)
     async def about(self, ctx):
         # Finding out bot uptime
         uptime_s = int(round(time() - startTime))
