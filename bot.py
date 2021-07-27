@@ -8,7 +8,7 @@ load_dotenv()
 
 def main():
     activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ/")
-    client = commands.Bot(command_prefix = "axda/", activity = activity, intents=discord.Intents.all())
+    client = commands.Bot(command_prefix = "xda/", activity = activity, intents=discord.Intents.all())
     client.remove_command("help")
     slash = SlashCommand(client, sync_commands=True)
 
