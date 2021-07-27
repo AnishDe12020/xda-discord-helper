@@ -9,7 +9,6 @@ activity = discord.Streaming(name="xda/help", url="https://www.youtube.com/watch
 client = commands.Bot(command_prefix = "axda/", activity = activity, intents=discord.Intents.all())
 client.remove_command("help")
 slash = SlashCommand(client, sync_commands=True)
-num = [1, 2, 3, 4, 5]
 
 guild_ids = os.environ["SLASH_GUILD_IDS"]
 guild_ids = guild_ids.split(" ")
