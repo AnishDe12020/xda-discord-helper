@@ -30,6 +30,10 @@ class Misc(commands.Cog):
         await ctx.send("Reminding you in {} seconds".format(time))
         await asyncio.sleep(int(time))
         await ctx.send(f'<@{uid}> Reminder: {" ".join(msg)}')
+
+    @commands.command()
+    async def ping(self, ctx):
+        await ctx.send(f"Pong! {round(self.client.latency*1000)}ms")
         
         
 def setup(client):
