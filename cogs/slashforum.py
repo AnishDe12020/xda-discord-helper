@@ -24,29 +24,37 @@ class SlashForum(commands.Cog):
     async def _google(self, ctx: SlashContext, search_string):
         await ctx.defer()
 
-        embed = discord.Embed(title = "__Here are the results for your search:__", color = 0x301c24)
-        search_url = list(googlesearch.search(search_string, num_results=10)); del search_url[5:]
-    
-        for links, n in zip(search_url, num):
-            embed.add_field(name = f"Link #{n}:", value = links, inline=False)
-        embed.set_footer(text = "Hope you found what you're looking for")
+        search_string = search_string.split(" ")
+
+        embed = self.search(search_string)
         await ctx.send(embed = embed)
 
     @cog_ext.cog_slash(name="forum", 
              description="Searches XDA Forums for you",
              guild_ids=guild_ids)
     @commands.cooldown(1, 45, commands.BucketType.user)
-    async def _forum(self, ctx, search_string):
-        serch_a = search_string; await ctx.defer()
-        serch_a += " site:forum.xda-developers.com"
-    
+    async def _forum(self, ctx: SlashContext, search_string):
+        await ctx.defer()
+
+        search_string = search_string.split(" ")
+
+        embed = self.search(search_string, xda=True)
+
+        await ctx.send(embed = embed)
+
+    def search(self, srch, xda=False):
+        param = " ".join(srch)
+        if xda:
+            param += " site:forum.xda-developers.com"
+
         embed = discord.Embed(title = "__Here are the results for your search:__", color = 0x301c24)
-        search_url = list(googlesearch.search(serch_a, num_results=10)); del search_url[5:]
-    
+        search_url = list(googlesearch.search(param, num_results=5))
+
         for links, n in zip(search_url, num):
             embed.add_field(name = f"Link #{n}:", value = links, inline=False)
-        embed.set_footer(text = "Happy modding :)")
-        await ctx.send(embed = embed)
+        embed.set_footer(text = "Hope you found what you're looking for")
+
+        return embed
      
 def setup(client):
     client.add_cog(SlashForum(client))
