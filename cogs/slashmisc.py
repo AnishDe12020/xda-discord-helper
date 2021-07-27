@@ -43,6 +43,11 @@ class SlashMisc(commands.Cog):
         await ctx.send("Reminding you in {} seconds".format(time))
         await asyncio.sleep(int(time))
         await ctx.send(f'<@{uid}> Reminder: {msg}')
+
+    @cog_ext.cog_slash(name="ping", description="Just a test command",
+            guild_ids=guild_ids)
+    async def _ping(self, ctx): 
+        await ctx.send(f"Pong! {round(self.client.latency*1000)}ms")
         
 def setup(client):
     client.add_cog(SlashMisc(client))

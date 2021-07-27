@@ -16,16 +16,7 @@ def main():
     guild_ids = guild_ids.split(" ")
     guild_ids = [int(guild_id) for guild_id in guild_ids]
 
-    """Ping commands"""
-    @slash.slash(name="ping", description="Just a test command",
-            guild_ids=guild_ids)
-    async def _ping(ctx): 
-        await ctx.send(f"Pong! {round(client.latency*1000)}ms")
-            
-    @client.command()
-    async def ping(ctx):
-        await ctx.send(f"Pong! {round(client.latency*1000)}ms") 
-        
+
     for file in os.listdir('./cogs'):
         if file.endswith(".py"):
             client.load_extension(f"cogs.{file[:-3]}")
